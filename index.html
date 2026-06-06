@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <button id="theme-toggle" class="btn">Toggle Dark Mode</button>
+    </header>
+
+    <div class="container">
+        <section class="greeting-section">
+            <h1 id="greeting-text">Good Morning</h1>
+            <div class="name-container">
+                <span id="name-display" class="editable-name">Click to set name</span>
+                <input type="text" id="name-input" class="hidden" placeholder="Type name & press Enter">
+            </div>
+            <p id="current-datetime">Saturday, 00:00:00</p>
+        </section>
+
+        <section class="card timer-section">
+            <h2>Focus Timer</h2>
+            <div class="timer-display" id="timer-display">25:00</div>
+            <div class="timer-controls">
+                <button id="timer-start" class="btn btn-success">Start</button>
+                <button id="timer-stop" class="btn btn-warning">Stop</button>
+                <button id="timer-reset" class="btn btn-danger">Reset</button>
+            </div>
+        </section>
+
+        <section class="card todo-section">
+            <h2>To-Do List</h2>
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="Add a new task..." required>
+                <button type="submit" class="btn">Add</button>
+            </form>
+            <p id="todo-error" class="error-text hidden">Task already exists!</p>
+            <ul id="todo-list">
+                </ul>
+        </section>
+
+        <section class="card links-section">
+            <h2>Quick Links</h2>
+            <form id="links-form">
+                <input type="text" id="link-name" placeholder="Website Name (e.g., Google)" required>
+                <input type="url" id="link-url" placeholder="URL (https://...)" required>
+                <button type="submit" class="btn">Add Link</button>
+            </form>
+            <div id="links-container" class="links-container">
+                </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
