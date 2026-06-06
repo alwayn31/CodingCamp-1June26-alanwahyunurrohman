@@ -1,0 +1,175 @@
+/* --- Root Variables for Light/Dark Mode --- */
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --primary-color: #4a90e2;
+    --border-color: #e0e0e0;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1e1e24;
+    --text-color: #f4f7f6;
+    --card-bg: #2a2a32;
+    --border-color: #444450;
+}
+
+/* --- General Reset & Layout --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- UI Components --- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+/* --- Buttons & Inputs --- */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn:hover { opacity: 0.9; }
+.btn-success { background-color: var(--success-color); }
+.btn-warning { background-color: var(--warning-color); }
+.btn-danger { background-color: var(--danger-color); }
+
+input[type="text"], input[type="url"] {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* --- Greeting Section --- */
+.greeting-section {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.greeting-section h1 { font-size: 2.5rem; }
+.editable-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--primary-color);
+}
+.hidden { display: none !important; }
+.error-text { color: var(--danger-color); font-size: 0.9rem; margin-top: 5px; }
+
+/* --- Timer --- */
+.timer-display {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* --- To-Do List --- */
+#todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+#todo-form input { flex: 1; }
+#todo-list { list-style: none; }
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+.todo-item.done span {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.todo-actions { display: flex; gap: 5px; }
+
+/* --- Quick Links --- */
+#links-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+#links-form input { flex: 1; min-width: 150px; }
+.links-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.link-shortcut {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-color);
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+.link-shortcut a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.delete-link {
+    cursor: pointer;
+    color: var(--danger-color);
+    font-weight: bold;
+}
